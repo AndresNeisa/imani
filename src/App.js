@@ -19,7 +19,7 @@ function App (){
   },[])
   
   return (
-    <Hero></Hero>
+    <Hero>{console.log(videos)}</Hero>
   );
 }
 
