@@ -1,38 +1,67 @@
-.App {
-  text-align: center;
-}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+html {
+  font-size: 62.5%; }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+body {
+  background-color: #DCDCDC; }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@font-face {
+  font-family: 'Playlist';
+  src: url(./css/fonts/PlaylistScript.otf) format("opentype"); }
+
+.hero {
+  padding: 4rem 10%;
+  background-color: #F6F1EE;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  align-items: center; }
+  .hero__content {
+    background-color: #DCDCDC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; }
+  .hero__title {
+    font-family: Playlist, sans-serif;
+    font-size: 8rem;
+    font-weight: 400;
+    line-height: 8rem;
+    letter-spacing: 4px;
+    color: #071B0C; }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.title-decor {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain; }
+  .title-decor-1 {
+    top: -4%;
+    left: -30%;
+    background-image: url(./css/images/leaf1.png);
+    width: 7rem;
+    height: 7rem;
+    transform: rotate(225deg); }
+  .title-decor-2 {
+    top: 54%;
+    left: -39%;
+    background-image: url(./css/images/leaf2.png);
+    width: 8rem;
+    height: 8rem; }
+  .title-decor-3 {
+    top: 16%;
+    left: -48%;
+    background-image: url(./css/images/leaf3.png);
+    width: 6rem;
+    height: 6rem;
+    transform: rotate(-20deg); }
+  .title-decor-4 {
+    top: -3%;
+    left: -40%;
+    background-image: url(./css/images/leaf4.png);
+    width: 4rem;
+    height: 4rem; }

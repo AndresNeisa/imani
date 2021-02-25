@@ -1,0 +1,95 @@
+$hero-bg-color: #F6F1EE;
+$hero-container: #DCDCDC;
+$color-title: #071B0C;
+
+
+// B A S E
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    background-color: $hero-container; 
+}
+
+// F O N T S
+@font-face {
+    font-family: 'Playlist';
+    src:  url(./css/fonts/PlaylistScript.otf) format('opentype');
+  }
+
+// .container{
+//     width: 80%;
+//     margin: 0 auto;
+// }
+
+.hero{
+    padding: 4rem 10%;
+    background-color: $hero-bg-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+    &__content{
+        background-color: #DCDCDC;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    &__title{
+        font-family: Playlist, sans-serif;
+        font-size: 8rem;
+        font-weight: 400;
+        line-height: 8rem;
+        letter-spacing: 4px;
+        color: $color-title;
+    }
+}
+
+.title-decor{
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    &-1{
+        top: -4%;
+        left: -30%;
+        background-image: url(./css/images/leaf1.png);
+        width: 7rem;
+        height: 7rem;
+        transform: rotate(225deg);
+    }
+    &-2{
+        top: 54%;
+        left: -39%;
+        background-image: url(./css/images/leaf2.png);
+        width: 8rem;
+        height: 8rem;
+    }
+    &-3{
+        top: 16%;
+        left: -48%;
+        background-image: url(./css/images/leaf3.png);
+        width: 6rem;
+        height: 6rem;
+        transform: rotate(-20deg);
+    }
+    &-4{
+        top: -3%;
+        left: -40%;
+        background-image: url(./css/images/leaf4.png);
+        width: 4rem;
+        height: 4rem;
+    }
+}
