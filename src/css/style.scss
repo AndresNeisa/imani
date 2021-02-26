@@ -1,5 +1,6 @@
 $hero-bg-color: #F6F1EE;
 $hero-container: #DCDCDC;
+$video-bg-color: #D9D9D9;
 $color-title: #071B0C;
 
 
@@ -13,7 +14,8 @@ $color-title: #071B0C;
 }
 
 html{
-    font-size: 62.5%;
+    font-size: 62.5% !important;
+    overflow-x: hidden;
 }
 
 body{
@@ -26,10 +28,10 @@ body{
     src:  url(./css/fonts/PlaylistScript.otf) format('opentype');
   }
 
-// .container{
-//     width: 80%;
-//     margin: 0 auto;
-// }
+.container{
+    width: 95%;
+    margin: 0 auto;
+}
 
 .hero{
     padding: 4rem 10%;
@@ -40,20 +42,30 @@ body{
     
 
     &__content{
-        background-color: #DCDCDC;
         display: flex;
         justify-content: center;
         align-items: center;
         position: relative;
+
+        &::before{
+            content: '';
+            position: absolute;
+            display: block;
+            width: 95%;
+            height: 90%;
+            background-color: #DCDCDC;
+            top: -1%
+        }
     }
 
     &__title{
         font-family: Playlist, sans-serif;
-        font-size: 8rem;
+        font-size: 11rem;
         font-weight: 400;
-        line-height: 8rem;
+        line-height: 11rem;
         letter-spacing: 4px;
         color: $color-title;
+        z-index: 10;
     }
 }
 
@@ -64,32 +76,112 @@ body{
 
     &-1{
         top: -4%;
-        left: -30%;
+        left: -20%;
         background-image: url(./css/images/leaf1.png);
         width: 7rem;
         height: 7rem;
-        transform: rotate(225deg);
+        transform: rotate(225deg); 
+        z-index: 4;
     }
     &-2{
-        top: 54%;
-        left: -39%;
+        top: 38%;
+        left: -27%;
         background-image: url(./css/images/leaf2.png);
         width: 8rem;
         height: 8rem;
+        z-index: 3;
     }
     &-3{
         top: 16%;
-        left: -48%;
+        left: -33%;
         background-image: url(./css/images/leaf3.png);
         width: 6rem;
         height: 6rem;
         transform: rotate(-20deg);
+        z-index: 2;
     }
     &-4{
-        top: -3%;
-        left: -40%;
+        top: -8%;
+        left: -31%;
         background-image: url(./css/images/leaf4.png);
-        width: 4rem;
-        height: 4rem;
+        width: 5rem;
+        height: 5rem;
+        z-index: 1;
     }
+}
+
+.videos{
+    background-color: $video-bg-color;
+}
+
+.video{
+
+    position: relative;
+
+    
+
+    &__title{
+        font-family: 'Roboto Slab', serif;
+        font-size: 2rem;
+        font-weight: 200;
+        line-height: 3rem;
+        padding-top: 3rem;
+        z-index: 2;
+        position: relative;
+    }
+
+    &__frame{
+        margin-top: 3rem;
+        border: none;
+    }
+
+    &__decoration{
+        width: 100%;
+        position: relative;
+
+        &::before{
+            content: '';
+            position: absolute;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    
+        &-odd::before{
+            background-image: url(./css/images/deco1.png);
+            width: 18rem;
+            height: 18rem;
+            transform: rotate(116deg);
+            top: -9rem;
+            left: -8rem;
+            z-index: 10;
+        }
+    
+        &-even::before{
+            background-image: url(./css/images/deco3.png);
+            width: 22rem;
+            height: 22rem;
+            transform: rotate(13deg);
+            top: -8rem;
+            left: 14rem;
+        }
+    }
+
+    &__link{
+        &:visited,
+        &:link{
+            display: inline-block;
+            color: inherit;
+            opacity: 0.8;
+            padding-top: 1.5rem;
+            padding-bottom: 3px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid black;
+            font-size: 1rem;
+        }
+    }
+}
+
+.video__title:nth-of-type(even){
+    color: blue;
 }

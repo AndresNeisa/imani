@@ -2,6 +2,7 @@ import './App.css';
 import React, { useEffect, useState } from 'react';
 import youtube from './apis/youtube'
 import Hero from './Hero';
+import VideoList from './VideoList';
 
 function App (){
   const [videos, setVideos] = useState([]);
@@ -10,7 +11,7 @@ function App (){
   useEffect(() => {
     const fetchVideos = async () => {
       const { data }  = await youtube.get();
-      console.log(data.items);
+      console.log(data);
       setVideos(data.items);
     }
 
@@ -19,7 +20,13 @@ function App (){
   },[])
   
   return (
-    <Hero>{console.log(videos)}</Hero>
+    <React.Fragment>
+      <Hero>{console.log(videos)}</Hero>
+      <section className='videos'>
+        <VideoList videos={videos}></VideoList>
+      </section>
+      
+    </React.Fragment>
   );
 }
 
