@@ -6,7 +6,7 @@ export default axios.create({
     baseURL: 'https://www.googleapis.com/youtube/v3/playlistItems',
     params: {
         part: 'snippet',
-        playlistId: 'PL9FvRJVQDugrmP_aYRsYeXOE8wLSBuy1i',
+        playlistId: 'PL9FvRJVQDugpg6XRrT9dAXer1SqSq_M2m',
         maxResults: 50,
         key: KEY
     }

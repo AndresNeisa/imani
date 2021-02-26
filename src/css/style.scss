@@ -3,6 +3,11 @@ $hero-container: #DCDCDC;
 $video-bg-color: #D9D9D9;
 $color-title: #071B0C;
 
+$mq-small: 450px;
+$mq-medium: 750px;
+$mq-large: 1000px;
+$mq-extra-large: 1450px;
+
 
 // B A S E
 *,
@@ -16,10 +21,27 @@ $color-title: #071B0C;
 html{
     font-size: 62.5% !important;
     overflow-x: hidden;
+
+    @media screen and (min-width: $mq-small) {
+        font-size: 73.5% !important;
+    }
+
+    @media screen and (min-width: $mq-medium) {
+        font-size: 100% !important;
+    }
+
+    @media screen and (min-width: $mq-large) {
+        font-size: 120% !important;
+    }
+
+    @media screen and (min-width: $mq-extra-large) {
+        font-size: 175% !important;
+    }
 }
 
 body{
     background-color: $hero-container; 
+    font-family: 'Roboto Slab', serif;
 }
 
 // F O N T S
@@ -39,6 +61,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: $mq-large) {
+        min-height: 100vh;
+    }
     
 
     &__content{
@@ -46,13 +73,27 @@ body{
         justify-content: center;
         align-items: center;
         position: relative;
+        font-size: 1rem;
+        max-width: 23em;
+        
+        width: 100%;
+        flex: 1 0 100%;
+
+        @media screen and (min-width: $mq-medium) {
+            font-size: 1.5rem;
+        }
+
+        @media screen and (min-width: $mq-large) {
+            font-size: 1.8rem;
+            
+        }
 
         &::before{
             content: '';
             position: absolute;
             display: block;
             width: 95%;
-            height: 90%;
+            height: 100%;
             background-color: #DCDCDC;
             top: -1%
         }
@@ -60,12 +101,37 @@ body{
 
     &__title{
         font-family: Playlist, sans-serif;
-        font-size: 11rem;
+        font-size: 11em;
         font-weight: 400;
-        line-height: 11rem;
+        line-height: 1em;
         letter-spacing: 4px;
         color: $color-title;
         z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        
+    }
+
+    &__sub-title{
+        display: block;
+        font-family: 'Roboto Slab', serif;
+        font-size: 0.08em;
+        line-height: 0.08em;
+        padding-bottom: 2em;
+    }
+
+    &__paragraph{
+        align-self: unset;
+        width: 100%;
+        flex: 1 0 100%;
+        text-align: center;
+        letter-spacing: 2px;
+        font-weight: 200;
+        font-size: 1rem;
+        font-family: 'Roboto Slab', serif;
+        padding-top: 1rem;
     }
 }
 
@@ -75,37 +141,37 @@ body{
     background-size: contain;
 
     &-1{
-        top: -4%;
-        left: -20%;
+        top: -0.5em;
+        left: -4.6em;
         background-image: url(./css/images/leaf1.png);
-        width: 7rem;
-        height: 7rem;
-        transform: rotate(225deg); 
+        width: 8em;
+        height: 8em;
+        transform: rotate(218deg); 
         z-index: 4;
     }
     &-2{
-        top: 38%;
-        left: -27%;
+        top: 4.8em;
+        left: -6.3em;
         background-image: url(./css/images/leaf2.png);
-        width: 8rem;
-        height: 8rem;
+        width: 9em;
+        height: 9em;
         z-index: 3;
     }
     &-3{
-        top: 16%;
-        left: -33%;
+        top: 2.5em;
+        left: -7.85em;
         background-image: url(./css/images/leaf3.png);
-        width: 6rem;
-        height: 6rem;
-        transform: rotate(-20deg);
+        width: 7em;
+        height: 7em;
+        transform: rotate(-12deg);
         z-index: 2;
     }
     &-4{
-        top: -8%;
-        left: -31%;
+        top: -0.8em;
+        left: -7.8em;
         background-image: url(./css/images/leaf4.png);
-        width: 5rem;
-        height: 5rem;
+        width: 6em;
+        height: 6em;
         z-index: 1;
     }
 }
@@ -116,6 +182,7 @@ body{
 
 .video{
 
+    width: 90% !important;
     position: relative;
 
     
@@ -137,6 +204,7 @@ body{
 
     &__decoration{
         width: 100%;
+        height: 1px;
         position: relative;
 
         &::before{
@@ -162,7 +230,7 @@ body{
             height: 22rem;
             transform: rotate(13deg);
             top: -8rem;
-            left: 14rem;
+            right: -3rem;
         }
     }
 
@@ -172,7 +240,7 @@ body{
             display: inline-block;
             color: inherit;
             opacity: 0.8;
-            padding-top: 1.5rem;
+            padding-top: 1.5em;
             padding-bottom: 3px;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -182,6 +250,44 @@ body{
     }
 }
 
-.video__title:nth-of-type(even){
-    color: blue;
+.sponsors{
+    background-color: $hero-bg-color;
+    padding-bottom: 2rem;
+
+    &__content{
+        display: flex;
+        justify-content: space-around;
+        align-content: center;
+        padding: 2rem 3rem;
+
+        @media screen and (max-width: $mq-medium) {
+            flex-direction: column;
+        }
+    }
+
+    &__title{
+        font-size: 1.2rem;
+        font-family: 'Roboto Slab', serif;
+        font-weight: 400;
+        text-align: center;
+        padding-top: 2rem;
+    }
+
+    &__img{
+        width: 40%;
+        filter: grayscale(50%);
+
+        @media screen and (max-width: $mq-medium) {
+            width: 70%;
+            max-width: 266px;
+            margin: 0 auto;
+            padding-bottom: 1.5rem;
+        }
+    }
+
+    img{
+        width: 100%;
+        display: inline-block;
+    }
+
 }

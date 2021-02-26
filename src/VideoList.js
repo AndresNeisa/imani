@@ -24,7 +24,7 @@ const Video = ( {video,sel} ) => {
     return(
         <Container className="video">
                 <h3 className="video__title">{video.snippet.title}</h3>
-                <span className={`video__decoration video__decoration-${sel}`}></span>
+                <div className={`video__decoration video__decoration-${sel}`}></div>
                 <Embed 
                 className={`video__frame `}
                 icon=""

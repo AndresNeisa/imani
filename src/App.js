@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import youtube from './apis/youtube'
 import Hero from './Hero';
 import VideoList from './VideoList';
+import Sponsors from './Sponsors';
 
 function App (){
   const [videos, setVideos] = useState([]);
@@ -22,10 +23,10 @@ function App (){
   return (
     <React.Fragment>
       <Hero>{console.log(videos)}</Hero>
+      <Sponsors/>
       <section className='videos'>
         <VideoList videos={videos}></VideoList>
       </section>
-      
     </React.Fragment>
   );
 }

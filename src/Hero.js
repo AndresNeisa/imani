@@ -10,8 +10,11 @@ const Hero = () => {
                 <span className="title-decor title-decor-4"></span>
                 <h1 className="hero__title">
                     Imani
+                    <span className="hero__sub-title">To believe in our struggle</span>
                 </h1>
+                
             </div>
+            <p className="hero__paragraph">A celebration of our 26th Annual Black History Month</p>
         </header>
     );
 }
