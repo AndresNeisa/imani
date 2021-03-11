@@ -12,7 +12,6 @@ function App (){
   useEffect(() => {
     const fetchVideos = async () => {
       const { data }  = await youtube.get();
-      console.log(data);
       setVideos(data.items);
     }
 
